@@ -97,7 +97,7 @@ $sans-2: 'Source Sans Pro', sans-serif;
     }
 
     h5 { // date
-      color: #9C9C9C;
+      color: $resume-font-color;
       font-size: $resume-font-size;
       font-weight: 400;
       font-family: $serif;
