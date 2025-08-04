@@ -1,1 +1,5 @@
 .sass-cache/
+echo "build/" >> .gitignore
+git add .gitignore
+git commit -m "Ignorera build/"
+build/
