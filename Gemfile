@@ -14,4 +14,5 @@ gem 'middleman-livereload'
 
 gem 'middleman-gh-pages'
 
-gem "rake", "~> 10.1.0"
+gem "rake", ">= 13"
+
