@@ -11,7 +11,7 @@
 }
 
 .resume {
-  color: $dark-font-color;
+  color: white;
   text-align: left;
   max-width: $max-width;
   margin: auto;
@@ -27,6 +27,7 @@
   h6 {
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
+    opacity: .8;
     text-align: left;
     margin: 1rem 0;
     font-weight: 800;
@@ -40,20 +41,22 @@
   h4 {
     display: inline;
     font-size: 1.2em;
-    font-family: $font-serif;
-    font-style: italic;
+    font-family: $font-rubik;
   }
 
   h5 {
-    color: desaturate(darken($resume-background, 20%), 30%);
+    color: white;
+    opacity: .8;
     text-transform: uppercase;
     margin-bottom: 0.5em;
-    margin-top: .5em;
+    margin-top: .7em;
     font-weight: 800;
   }
 
   p {
     line-height: 1.6;
+    opacity: .8;
+    font-family: $font-rubik;
     margin: 0 auto 3em;
   }
 

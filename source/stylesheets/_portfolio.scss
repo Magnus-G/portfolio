@@ -9,7 +9,7 @@ $nyarp-color: #BE8B41;
   padding-top: $container-padding-big;
   position: relative;
 
-  h1, h2 {
+h2, p {
     color: $dark-font-color;
   }
 
@@ -27,7 +27,7 @@ $nyarp-color: #BE8B41;
 
 .portfolio-flex-centering {
 	margin: auto;
-	padding: 2rem;
+	padding: 4rem 2rem;
 }
 
 .projects-in-focus, .projects-at-a-glance {
@@ -35,7 +35,7 @@ $nyarp-color: #BE8B41;
 	display: flex;
 	flex-wrap: wrap;
 	max-width: 1300px;
-	margin-bottom: 6rem;
+	margin-bottom: 4rem;
 }
 
 .project-item-focus {

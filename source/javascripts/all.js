@@ -1,6 +1,96 @@
-// $(document).ready(function() {
-//    $(".scroll-on-page-links").toggleClass("js-slide-up", 2000, "easeInOutExpo");
-// });
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".clients-container");
+
+  // Stoppar bild-drag (på både desktop & mobil)
+  document.querySelectorAll(".clients-container img").forEach(img => {
+    img.setAttribute("draggable", "false");
+  });
+
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+  let autoScrollInterval;
+
+  function startAutoScroll() {
+    clearInterval(autoScrollInterval);
+    autoScrollInterval = setInterval(() => {
+      container.scrollLeft += 0.5;
+
+      // loopa sömlöst (eftersom listan är dubblerad)
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 0;
+      }
+    }, 16); // ~60fps
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  // Starta automatiskt direkt
+  startAutoScroll();
+
+  // 🖱 MUS - börja dra
+  container.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+    stopAutoScroll();
+    container.style.cursor = "grabbing";
+  });
+
+  // 🖱 MUS - dra
+  container.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 2; // justera känslighet
+    container.scrollLeft = scrollLeft - walk;
+  });
+
+  // 🖱 MUS - släpp
+  container.addEventListener("mouseup", () => {
+    if (isDragging) {
+      isDragging = false;
+      container.style.cursor = "grab";
+      startAutoScroll();
+    }
+  });
+
+  // 🖱 MUS - lämna område
+  container.addEventListener("mouseleave", () => {
+    if (isDragging) {
+      isDragging = false;
+      container.style.cursor = "grab";
+      startAutoScroll();
+    }
+  });
+
+  // 📱 TOUCH - börja
+  container.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    startX = e.touches[0].pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+    stopAutoScroll();
+  }, { passive: true });
+
+  // 📱 TOUCH - dra
+  container.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - container.offsetLeft;
+    const walk = (x - startX) * 2;
+    container.scrollLeft = scrollLeft - walk;
+  }, { passive: true });
+
+  // 📱 TOUCH - släpp
+  container.addEventListener("touchend", () => {
+    isDragging = false;
+    startAutoScroll();
+  });
+});
+
+
+//////
 
 $(document).ready(function() {
   var menuToggle = $('#js-mobile-menu').unbind();

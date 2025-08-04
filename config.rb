@@ -1,3 +1,13 @@
+helpers do
+  def auto_image_tag(filename)
+    alt_text = filename
+                .gsub(File.extname(filename), '')
+                .gsub(/[-_]/, ' ')
+                .capitalize
+    image_tag(filename, alt: alt_text)
+  end
+end
+
 ###
 # Page options, layouts, aliases and proxies
 ###

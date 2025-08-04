@@ -14,14 +14,16 @@ $breakpoint: 680px;
 $hero-first-breakpoint: 900px;
 $resume-breakpoint: 500px;
 
-$hero-background: #141919;
+$dark-background: #0a3231;
+
+$hero-background: $dark-background;
 $body-color: $hero-background;
 $what-i-do-background: #d7fffe;
-$clients-background: $hero-background;
+$clients-background: $dark-background;
 $highlight-background: #ffde66;
 $portfolio-background: white;
 $project-background: white;
-$resume-background: #ffdddc;
+$resume-background: $dark-background;
 $contact-background: $hero-background;
 
 $what-i-do-max-width: 900px;
@@ -34,7 +36,7 @@ $light-font-color: $what-i-do-background;
 $dark-font-color: $dark;
 $max-width: 666px;
 
-$container-padding-small: 5rem;
+$container-padding-small: 4rem;
 $container-padding-big: 10rem;
 
 $container-padding-mobile: 9rem 1rem 2rem;
@@ -45,6 +47,7 @@ $font-viga: 'Viga', sans-serif;
 $font-header: 'norwester', helvetica, sans-serif;
 $font-small-header: 'Oswald', helvetica, sans-serif;
 $font-serif: 'Merriweather', serif;
+$font-rubik: 'Rubik', sans-serif;
 
 @mixin top($foreground, $background) {
   height: 0;
@@ -153,17 +156,16 @@ h3 {
 }
 
 h5 {
-  color: $dark-font-color;
   font-size: .7rem;
   margin: 0;
-  color: transparentize($dark-font-color, 0.5);
+  color: transparentize($dark-font-color, 0.3);
   font-weight: 400;
   margin-bottom: 0.1rem;
 }
 
 p, ul {
   font-family: $font-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.7;
   margin-top: 0;
   margin-bottom: 2rem;
