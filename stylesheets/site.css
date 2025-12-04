@@ -646,7 +646,8 @@ textarea {
   background: white;
   padding-top: 10rem;
   position: relative; }
-  .portfolio-with-text-container h1, .portfolio-with-text-container h2 {
+  .portfolio-with-text-container h1,
+  .portfolio-with-text-container h2 {
     color: #131515; }
   .portfolio-with-text-container .triangle {
     fill: #141919; }
@@ -661,7 +662,8 @@ textarea {
   margin: auto;
   padding: 2rem; }
 
-.projects-in-focus, .projects-at-a-glance {
+.projects-in-focus,
+.projects-at-a-glance {
   gap: 4px;
   display: flex;
   flex-wrap: wrap;
@@ -704,6 +706,11 @@ textarea {
     @media (max-width: 680px) {
       .project-item-focus-back h3 {
         margin: 1.5rem; } }
+.adlibris {
+  background: #b23434; }
+  .adlibris:hover {
+    background-color: #a22f2f; }
+
 .mindler {
   background: #19605D; }
   .mindler:hover {
