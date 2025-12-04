@@ -115,7 +115,7 @@ GEM
     parslet (2.0.0)
     ptools (1.5.0)
     public_suffix (5.1.1)
-    rack (3.1.16)
+    rack (3.1.18)
     rack-livereload (0.6.1)
       rack (>= 3.0, < 3.2)
     rackup (2.2.1)
