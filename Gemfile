@@ -12,7 +12,10 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'middleman', '>= 4.0.0'
 gem 'middleman-livereload'
 
-gem 'middleman-gh-pages'
-
 gem "rake", ">= 13"
+
+gem 'middleman-deploy', git: 'https://github.com/karlfreeman/middleman-deploy.git', branch: 'master'
+
+
+
 
