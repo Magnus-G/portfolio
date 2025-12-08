@@ -662,7 +662,7 @@ textarea {
   gap: 16px;
   max-width: 1300px;
   margin-bottom: 4rem; }
-  @media (max-width: 680px) {
+  @media (max-width: 900px) {
     .projects-in-focus {
       grid-template-columns: 1fr; } }
 .projects-at-a-glance {
@@ -709,9 +709,9 @@ textarea {
       .project-item-focus-back h3 {
         margin: 1.5rem; } }
 .adlibris {
-  background: #b23434; }
+  background: #a23939; }
   .adlibris:hover {
-    background-color: #a22f2f; }
+    background-color: #933434; }
 
 .mindler {
   background: #19605D; }
@@ -724,9 +724,9 @@ textarea {
     background-color: #15405c; }
 
 .nyarp {
-  background: #BE8B41; }
+  background: #60502d; }
   .nyarp:hover {
-    background-color: #af803c; }
+    background-color: #524426; }
 
 .projects-in-focus-heading h2,
 .projects-at-a-glance-heading h2 {
@@ -1106,7 +1106,7 @@ textarea {
     color: #d0d5d5;
     font-size: 1.2rem;
     text-transform: uppercase;
-    background-color: #091515;
+    background-color: #183939;
     padding: 1.2rem 2rem;
     border-radius: 4px;
     letter-spacing: .6px;
@@ -1114,17 +1114,23 @@ textarea {
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease; }
     .contact-content .copy-email-btn:hover {
-      background-color: #183939;
+      background-color: #204b4b;
       transform: translateY(-1px); }
     .contact-content .copy-email-btn:active {
       transform: translateY(0); }
+    .contact-content .copy-email-btn .copy-icon {
+      height: 1em;
+      width: auto;
+      margin-right: 0.5rem;
+      vertical-align: middle; }
     .contact-content .copy-email-btn .copy-feedback {
-      color: #2fa6a6;
       font-weight: bold; }
     @media (max-width: 680px) {
       .contact-content .copy-email-btn {
         font-size: 1rem;
-        padding: 1rem 1.2rem; } }
+        padding: 1rem 1.2rem; }
+        .contact-content .copy-email-btn .copy-icon {
+          height: 1em; } }
 .contact-content-text {
   text-align: center;
   padding-bottom: 9rem; }
