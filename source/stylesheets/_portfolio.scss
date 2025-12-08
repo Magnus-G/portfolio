@@ -1,8 +1,8 @@
 $project-padding: 20px;
 $mindler-color: #19605D;
-$adlibris-color: #b23434;
+$adlibris-color: #a23939;
 $tvnu-color: #194b6d;
-$nyarp-color: #BE8B41;
+$nyarp-color: #60502d;
 
 .portfolio-with-text-container {
   background: $portfolio-background;
@@ -39,7 +39,7 @@ $nyarp-color: #BE8B41;
   max-width: 1300px;
   margin-bottom: 4rem;
 
-  @media (max-width: $breakpoint) {
+  @media (max-width: $hero-first-breakpoint) {
     grid-template-columns: 1fr;
   }
 }

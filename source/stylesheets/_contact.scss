@@ -1,93 +1,103 @@
 .contact {
-	background-color: $contact-background;
-	position: relative;
+  background-color: $contact-background;
+  position: relative;
 
-	.triangle {
-		fill: $resume-background;
-	}
+  .triangle {
+    fill: $resume-background;
+  }
 }
 
 .contact-content {
-	position: relative;
-	min-height: 25rem;
-	padding-top: $container-padding-big;
-	background-color: $contact-background;
+  position: relative;
+  min-height: 25rem;
+  padding-top: $container-padding-big;
+  background-color: $contact-background;
 
-	h1,
-	h2 {
-		color: $light-color
-	}
+  h1,
+  h2 {
+    color: $light-color
+  }
 
-	a {
-		font-family: $font-header;
-		color: $light-color;
-		font-size: 1.2rem;
-		text-decoration: none;
-		text-transform: uppercase;
-		background-color: $resume-background;
-		padding: 1.2rem 2rem;
-		border-radius: 4px;
-		letter-spacing: .6px;
+  a {
+    font-family: $font-header;
+    color: $light-color;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $resume-background;
+    padding: 1.2rem 2rem;
+    border-radius: 4px;
+    letter-spacing: .6px;
 
-		@media (max-width: $breakpoint) {
-			font-size: 1rem;
-			padding: 1rem 1.2rem;
-		}
-	}
+    @media (max-width: $breakpoint) {
+      font-size: 1rem;
+      padding: 1rem 1.2rem;
+    }
+  }
 
-	.copy-email-btn {
-		font-family: $font-header;
-		color: $light-color;
-		font-size: 1.2rem;
-		text-transform: uppercase;
-		background-color: $resume-background;
-		padding: 1.2rem 2rem;
-		border-radius: 4px;
-		letter-spacing: .6px;
-		border: none;
-		cursor: pointer;
-		transition: background-color 0.2s ease, transform 0.1s ease;
+  .copy-email-btn {
+    font-family: $font-header;
+    color: $light-color;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background-color: lighten($resume-background, 10%);
+    padding: 1.2rem 2rem;
+    border-radius: 4px;
+    letter-spacing: .6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 
-		&:hover {
-			background-color: lighten($resume-background, 10%);
-			transform: translateY(-1px);
-		}
+    &:hover {
+      background-color: lighten($resume-background, 15%);
+      transform: translateY(-1px);
+    }
 
-		&:active {
-			transform: translateY(0);
-		}
+    &:active {
+      transform: translateY(0);
+    }
 
-		.copy-feedback {
-			color: #2fa6a6;
-			font-weight: bold;
-		}
+    .copy-icon {
+      height: 1em; // Same as font size
+      width: auto;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
 
-		@media (max-width: $breakpoint) {
-			font-size: 1rem;
-			padding: 1rem 1.2rem;
-		}
-	}
+    .copy-feedback {
+      font-weight: bold;
+    }
+
+    @media (max-width: $breakpoint) {
+      font-size: 1rem;
+      padding: 1rem 1.2rem;
+
+      .copy-icon {
+        height: 1em; // Scales with responsive font size
+      }
+    }
+  }
 }
 
 .contact-content-text {
-	text-align: center;
-	padding-bottom: 9rem;
+  text-align: center;
+  padding-bottom: 9rem;
 }
 
 .to-the-top {
-	text-align: center;
-	padding-bottom: $container-padding-small;
+  text-align: center;
+  padding-bottom: $container-padding-small;
 }
 
 .up-link {
-	font-family: $font-header;
-	text-transform: uppercase;
-	color: $light-color;
-	text-decoration: none;
+  font-family: $font-header;
+  text-transform: uppercase;
+  color: $light-color;
+  text-decoration: none;
 }
 
 .project-bottom-section .contact-content {
-	.triangle {
-		fill: $portfolio-background;
-	}
+  .triangle {
+    fill: $portfolio-background;
+  }
 }
