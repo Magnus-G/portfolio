@@ -1,40 +1,48 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".clients-container");
 
   // Only run carousel code if container exists (on index.html)
   if (container) {
-    // Stoppar bild-drag (på både desktop & mobil)
+    let scrollInterval;
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+
+    // Disable image dragging for better UX
     document.querySelectorAll(".clients-container img").forEach(img => {
       img.setAttribute("draggable", "false");
     });
 
-    let isDragging = false;
-    let startX;
-    let scrollLeft;
-    let autoScrollInterval;
-
     function startAutoScroll() {
-      if (!container) return;
-      clearInterval(autoScrollInterval);
-      autoScrollInterval = setInterval(() => {
-        if (!container) return;
-        container.scrollLeft += 0.5;
+      if (scrollInterval) clearInterval(scrollInterval);
 
-        // loopa sömlöst (eftersom listan är dubblerad)
-        if (container.scrollLeft >= container.scrollWidth / 2) {
-          container.scrollLeft = 0;
+      scrollInterval = setInterval(() => {
+        if (!isDragging && container) {
+          // Use smooth scrolling that works better in Safari
+          const currentScroll = container.scrollLeft;
+          const scrollWidth = container.scrollWidth;
+          const clientWidth = container.clientWidth;
+
+          // Move 1px per frame for smooth animation
+          container.scrollLeft = currentScroll + 1;
+
+          // Seamless loop: reset when we've scrolled past halfway
+          if (container.scrollLeft >= scrollWidth / 2) {
+            container.scrollLeft = 0;
+          }
         }
       }, 16); // ~60fps
     }
 
     function stopAutoScroll() {
-      clearInterval(autoScrollInterval);
+      if (scrollInterval) {
+        clearInterval(scrollInterval);
+        scrollInterval = null;
+      }
     }
 
-    // Starta automatiskt direkt
-    startAutoScroll();
-
-    // 🖱 MUS - börja dra
+    // Mouse drag events
     container.addEventListener("mousedown", (e) => {
       isDragging = true;
       startX = e.pageX - container.offsetLeft;
@@ -43,16 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
       container.style.cursor = "grabbing";
     });
 
-    // 🖱 MUS - dra
     container.addEventListener("mousemove", (e) => {
       if (!isDragging) return;
       e.preventDefault();
       const x = e.pageX - container.offsetLeft;
-      const walk = (x - startX) * 2; // justera känslighet
+      const walk = (x - startX) * 2; // Adjust drag sensitivity
       container.scrollLeft = scrollLeft - walk;
     });
 
-    // 🖱 MUS - släpp
     container.addEventListener("mouseup", () => {
       if (isDragging) {
         isDragging = false;
@@ -61,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // 🖱 MUS - lämna område
     container.addEventListener("mouseleave", () => {
       if (isDragging) {
         isDragging = false;
@@ -70,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // 📱 TOUCH - börja
+    // Touch drag events for mobile
     container.addEventListener("touchstart", (e) => {
       isDragging = true;
       startX = e.touches[0].pageX - container.offsetLeft;
@@ -78,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
       stopAutoScroll();
     }, { passive: true });
 
-    // 📱 TOUCH - dra
     container.addEventListener("touchmove", (e) => {
       if (!isDragging) return;
       const x = e.touches[0].pageX - container.offsetLeft;
@@ -86,11 +90,16 @@ document.addEventListener("DOMContentLoaded", () => {
       container.scrollLeft = scrollLeft - walk;
     }, { passive: true });
 
-    // 📱 TOUCH - släpp
     container.addEventListener("touchend", () => {
       isDragging = false;
       startAutoScroll();
-    });
+    }, { passive: true });
+
+    // Set initial cursor style
+    container.style.cursor = "grab";
+
+    // Start the carousel
+    startAutoScroll();
   }
 });
 
