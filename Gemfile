@@ -8,4 +8,3 @@ gem 'middleman-gh-pages'
 gem "rake", "~> 13.0"
 gem 'haml', '~> 5.2'
 gem 'sassc', '~> 2.4'
-

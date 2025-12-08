@@ -82,9 +82,4 @@ end
 activate :relative_assets
 set :relative_links, true
 
-activate :deploy do |deploy|
-  deploy.deploy_method = :git
-  deploy.remote = 'origin'
-  deploy.branch = 'gh-pages'
-  deploy.build_before = true
-end
+# GitHub Pages deployment will be handled manually
