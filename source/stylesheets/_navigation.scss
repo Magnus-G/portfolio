@@ -1,6 +1,12 @@
 .navigation {
   $medium-screen: 45em !default;
   background: $hero-background;
+
+  // On project pages, override to white
+  .projects & {
+    background: white !important;
+  }
+
   padding: .8rem;
   position: fixed;
   z-index: 2;
@@ -33,6 +39,7 @@
 
   h1 {
     margin: 0;
+
     a {
       font-size: 1rem;
       text-align: left;
@@ -41,9 +48,13 @@
       font-weight: 400;
       line-height: 1.3;
       letter-spacing: .3px;
-      text-shadow: 0 1px 1px transparentize(black, 0.7);
       margin-bottom: 0;
       font-family: $font-small-header;
+
+      // On project pages, override to white
+      .projects & {
+        color: black !important;
+      }
     }
   }
 
@@ -106,8 +117,13 @@
     padding: .08rem .2rem;
     font-size: 0.9rem;
 
+    // On project pages, override to white
+    .projects & {
+      color: black !important;
+    }
+
     &:hover {
-      color: lighten(#44807f, 10);
+      color: lighten(#44807f, 40);
     }
 
     @media (max-width: $medium-screen) {

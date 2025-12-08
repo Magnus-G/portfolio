@@ -1,15 +1,16 @@
 $project-padding: 20px;
 $mindler-color: #19605D;
+$adlibris-color: #b23434;
 $tvnu-color: #194b6d;
 $nyarp-color: #BE8B41;
-
 
 .portfolio-with-text-container {
   background: $portfolio-background;
   padding-top: $container-padding-big;
   position: relative;
 
-h2, p {
+  h2,
+  p {
     color: $dark-font-color;
   }
 
@@ -26,105 +27,127 @@ h2, p {
 }
 
 .portfolio-flex-centering {
-	margin: auto;
-	padding: 4rem 2rem;
+  margin: auto;
+  padding: 4rem 2rem;
 }
 
-.projects-in-focus, .projects-at-a-glance {
-	gap: 4px;
-	display: flex;
-	flex-wrap: wrap;
-	max-width: 1300px;
-	margin-bottom: 4rem;
+
+.projects-in-focus {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 1300px;
+  margin-bottom: 4rem;
+
+  @media (max-width: $breakpoint) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projects-at-a-glance {
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin-bottom: 4rem;
 }
 
 .project-item-focus {
-	position: relative;
-	display: flex;
-	height: 25rem;
-	align-items: center;
-	justify-content: center;
-	flex-grow: 1;
-	transition: background-color .3s ease-out 100ms;
+  position: relative;
+  display: flex;
+  height: 25rem;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  transition: background-color .3s ease-out 100ms;
 
-	@media (max-width: $breakpoint) {
-		height: 20rem;
-	}
+  @media (max-width: $breakpoint) {
+    height: 20rem;
+  }
 
-	img {
-		margin: 0 7rem;
-		width: 8rem;
-		transition: all .3s ease-out 100ms;
+  img {
+    margin: 0 7rem;
+    width: 8rem;
+    transition: all .3s ease-out 100ms;
 
-		@media (max-width: $breakpoint) {
-			margin: 0 4rem;
-		}
-	}
+    @media (max-width: $breakpoint) {
+      margin: 0 4rem;
+    }
+  }
 
-	&:hover img {
-		width: 8.5rem;
-	}
+  &:hover img {
+    width: 8.5rem;
+  }
 }
 
 .project-item-focus-back {
-	padding: 1rem;
+  padding: 1rem;
 
-	h3 {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: 2rem;
-		color: white;
-		font-size: .9rem;
-		border-width: 1px;
-		padding: .4rem 0;
+  h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 2rem;
+    color: white;
+    font-size: .9rem;
+    border-width: 1px;
+    padding: .4rem 0;
 
-		@media (max-width: $breakpoint) {
-			margin: 1.5rem;
-		}
-	}
+    @media (max-width: $breakpoint) {
+      margin: 1.5rem;
+    }
+  }
+}
+
+.adlibris {
+  background: $adlibris-color;
+
+  &:hover {
+    background-color: darken($adlibris-color, 4%);
+  }
 }
 
 .mindler {
-	background: $mindler-color;
+  background: $mindler-color;
 
-	&:hover {
-		background-color: darken($mindler-color, 4%);
-	}
+  &:hover {
+    background-color: darken($mindler-color, 4%);
+  }
 }
 
 .tvnu {
-	background: $tvnu-color;
+  background: $tvnu-color;
 
-	&:hover {
-		background-color: darken($tvnu-color, 4%);
-	}
+  &:hover {
+    background-color: darken($tvnu-color, 4%);
+  }
 }
 
 .nyarp {
-	background: $nyarp-color;
-	&:hover {
-		background-color: darken($nyarp-color, 4%);
-	}
+  background: $nyarp-color;
+
+  &:hover {
+    background-color: darken($nyarp-color, 4%);
+  }
 }
 
 .projects-in-focus-heading,
 .projects-at-a-glance-heading {
-	h2 {
-		font-family: $font-viga;
-		font-style: normal;
-		text-align: left;
-		margin: 0 0 1rem 0;
+  h2 {
+    font-family: $font-viga;
+    font-style: normal;
+    text-align: left;
+    margin: 0 0 1rem 0;
 
-		@media (max-width: $breakpoint) {
-			padding: 0;
-		}
-	}
+    @media (max-width: $breakpoint) {
+      padding: 0;
+    }
+  }
 }
 
 .projects-at-a-glance {
-	gap: 1rem;
+  gap: 1rem;
 }
 
 .project-item {
@@ -132,28 +155,29 @@ h2, p {
   flex-grow: 1;
   margin-bottom: 2rem;
 
-	img {
-		border-radius: 4px;
-		margin-bottom: .7rem;
-		-webkit-transform: scale(1);
-		transform: scale(1);
-		-webkit-transition: .3s ease-in-out;
-		transition: .2s ease-in-out;
-	}
+  img {
+    border-radius: 4px;
+    margin-bottom: .7rem;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
+  }
 
-	&:hover img {
-		-webkit-transform: scale(1.03);
-		transform: scale(1.02);
-		box-shadow: 0 2px 25px #0000001f;
-	}
+  &:hover img {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.02);
+    box-shadow: 0 2px 25px #0000001f;
+  }
 
   h4 {
-    color: $dark-font-color;
+    color: $light-color;
     font-size: .7rem;
     margin: 0;
   }
 
   h5 {
+    color: $light-color;
     margin-bottom: 0.2rem;
   }
 }

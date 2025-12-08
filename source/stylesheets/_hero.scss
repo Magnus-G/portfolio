@@ -2,13 +2,13 @@
   background: $hero-background;
   padding: 0 2rem;
 }
-  
+
 .hero-content {
   display: flex;
   justify-content: space-between;
   padding: ($container-padding-small * 1.8) 0 $container-padding-small;
   margin: 0 auto;
-  max-width: 950px;  
+  max-width: 950px;
 
   @media (max-width: $hero-first-breakpoint) {
     flex-direction: column-reverse;
@@ -44,7 +44,7 @@
     opacity: .8;
     letter-spacing: -.4px;
     font-size: 1.1rem;
-    
+
     @media (max-width: $hero-first-breakpoint) {
       text-align: center;
       font-size: 1rem;
@@ -61,7 +61,7 @@
 .mugshot {
   width: 24rem;
   height: 24rem;
-  
+
   @media (max-width: $hero-first-breakpoint) {
     width: 11rem;
     height: 11rem;
@@ -71,12 +71,10 @@
 
 .photo {
   border-radius: 12rem;
-  border: 11px solid #0d2828;
+  border: 11px solid darken($hero-background, 1%);
   margin: 0 2rem 0 0;
 
   @media (max-width: $hero-first-breakpoint) {
     margin: auto;
   }
 }
-
-

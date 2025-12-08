@@ -3,7 +3,7 @@
 	position: relative;
 
 	.triangle {
-	  fill: $resume-background;
+		fill: $resume-background;
 	}
 }
 
@@ -13,13 +13,14 @@
 	padding-top: $container-padding-big;
 	background-color: $contact-background;
 
-	h1, h2 {
-		color: $resume-background;
+	h1,
+	h2 {
+		color: $light-color
 	}
 
 	a {
 		font-family: $font-header;
-		color: #6d3a39;
+		color: $light-color;
 		font-size: 1.2rem;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -29,15 +30,48 @@
 		letter-spacing: .6px;
 
 		@media (max-width: $breakpoint) {
-		  font-size: 1rem;
+			font-size: 1rem;
+			padding: 1rem 1.2rem;
+		}
+	}
+
+	.copy-email-btn {
+		font-family: $font-header;
+		color: $light-color;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		background-color: $resume-background;
+		padding: 1.2rem 2rem;
+		border-radius: 4px;
+		letter-spacing: .6px;
+		border: none;
+		cursor: pointer;
+		transition: background-color 0.2s ease, transform 0.1s ease;
+
+		&:hover {
+			background-color: lighten($resume-background, 10%);
+			transform: translateY(-1px);
+		}
+
+		&:active {
+			transform: translateY(0);
+		}
+
+		.copy-feedback {
+			color: #2fa6a6;
+			font-weight: bold;
+		}
+
+		@media (max-width: $breakpoint) {
+			font-size: 1rem;
 			padding: 1rem 1.2rem;
 		}
 	}
 }
 
 .contact-content-text {
-		text-align: center;
-		padding-bottom: 9rem;
+	text-align: center;
+	padding-bottom: 9rem;
 }
 
 .to-the-top {
@@ -46,14 +80,14 @@
 }
 
 .up-link {
-	font-family: $font-header;	
+	font-family: $font-header;
 	text-transform: uppercase;
-	color: $resume-background;
+	color: $light-color;
 	text-decoration: none;
 }
 
 .project-bottom-section .contact-content {
-		.triangle {
-	  	fill: $portfolio-background;
+	.triangle {
+		fill: $portfolio-background;
 	}
 }

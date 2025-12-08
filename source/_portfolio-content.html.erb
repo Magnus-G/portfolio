@@ -7,24 +7,32 @@
 			<div class="projects-in-focus">
 			<% link_to '/projects/mindler.html', :class => 'project-item-focus mindler' do %>
 		  		<div class="project-item-focus-back">
-				  	<%= auto_image_tag 'logos/mindler.png' %>
+				  	<%= auto_image_tag 'logos/mindler.png', 'Mindler company logo' %>
 				  	<h3>UX DESIGN LEAD</h3>
 				  </div>
 				<% end %>
 
 			<% link_to '/projects/tvnu.html', :class => 'project-item-focus tvnu' do %>
 		  		<div class="project-item-focus-back">
-				  	<%= auto_image_tag 'logos/tvnu.png' %>
+				  	<%= auto_image_tag 'logos/tvnu.png', 'TV.nu company logo' %>
 				  	<h3>PRODUCT DESIGN</h3>
 				  </div>
 				<% end %>
 
 			<% link_to '/projects/nyarp.html', :class => 'project-item-focus nyarp' do %>
 		    	<div class="project-item-focus-back">
-		      	<%= auto_image_tag 'logos/nyarp.png' %>
+		      	<%= auto_image_tag 'logos/nyarp.png', 'Nyarp company logo' %>
 		      	<h3>FULL STACK DESIGN</h3>
 		      </div>
 		    <% end %>
+
+      <% link_to '/projects/adlibris.html', :class => 'project-item-focus adlibris' do %>
+          <div class="project-item-focus-back">
+            <%= auto_image_tag 'logos/adlibris.png', 'Adlibris company logo' %>
+            <h3>UX / UI / FRONTEND DESIGN</h3>
+          </div>
+        <% end %>
+
 			</div>
 		</div>
 
@@ -33,23 +41,15 @@
 		  <div class="projects-at-a-glance">
 
 			<% link_to '/projects/mindler-concept.html', class: 'project-item' do %>
-			  <%= auto_image_tag 'projects/mindler-concept1.png' %>
+			  <%= auto_image_tag 'projects/mindler-concept1.png', 'Mindler social anxiety app concept interface design' %>
 			  <div class="project-text">
 			    <h5>Mindler</h5>
 			    <h4>Concept for Social Anxiety App</h4>
 			  </div>
 			<% end %>
 
-			<% link_to '/projects/aerocrine.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/aerocrine2.png' %>
-		      <div class="project-text">
-		        <h5>Aerocrine</h5>
-		        <h4>Niox Vero</h4>
-		      </div>
-		    <% end %>
-
 			<% link_to '/projects/health-care.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/6_3.png' %>
+		      <%= auto_image_tag 'projects/6_3.png', 'Future healthcare concept design by Veryday' %>
 		      <div class="project-text">
 		        <h5>Veryday</h5>
 		        <h4>Future Health Care Concept</h4>
@@ -57,7 +57,7 @@
 		    <% end %>
 
 			<% link_to '/projects/insight-pump.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/insight-pump2.png' %>
+		      <%= auto_image_tag 'projects/insight-pump2.png', 'Roche Diagnostics insulin pump interface design' %>
 		      <div class="project-text">
 		        <h5>Roche Diagnostics</h5>
 		        <h4>Insulin Pump Interface</h4>
@@ -65,7 +65,7 @@
 		    <% end %>
 		    
 			<% link_to '/projects/swegon.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/34.png' %>
+		      <%= auto_image_tag 'projects/34.png', 'Swegon air handling unit interface design project' %>
 		      <div class="project-text">
 		        <h5>Swegon</h5>
 		        <h4>Air Handling Unit</h4>
@@ -73,7 +73,7 @@
 		    <% end %>
 
 			<% link_to '/projects/itt.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/39_2.png' %>
+		      <%= auto_image_tag 'projects/39_2.png', 'ITT Flygt pump station interface design' %>
 		      <div class="project-text">
 		        <h5>ITT Flygt (now Xylem)</h5>
 		        <h4>Pump Station Interface</h4>
@@ -81,7 +81,7 @@
 		    <% end %>
 
 			<% link_to '/projects/sonicspree.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/29_6.png' %>
+		      <%= auto_image_tag 'projects/29_6.png', 'Sonicspree music game design by Veryday' %>
 		      <div class="project-text">
 		        <h5>Veryday</h5>
 		        <h4>Sonicspree Music Game</h4>
@@ -89,7 +89,7 @@
 		    <% end %>
 
 			<% link_to '/projects/spotify.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/27.png' %>
+		      <%= auto_image_tag 'projects/27.png', 'Spotify Windows Phone 7 application design project' %>
 		      <div class="project-text">
 		        <h5>Spotify</h5>
 		        <h4>Application for Windows Phone 7</h4>
@@ -97,7 +97,7 @@
 		    <% end %>
 
 			<% link_to '/projects/gameface.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/40_2.png' %>
+		      <%= auto_image_tag 'projects/40_2.png', 'Gameface Media photo gallery application design' %>
 		      <div class="project-text">
 		        <h5>Gameface Media</h5>
 		        <h4>Photo Gallery Application</h4>
@@ -105,7 +105,7 @@
 		    <% end %>
 		    
 			<% link_to '/projects/pinball.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/30_6.png' %>
+		      <%= auto_image_tag 'projects/30_6.png', 'Pinball Expo 2011 graphic design project' %>
 		      <div class="project-text">
 		        <h5>Graphic Design Study</h5>
 		        <h4>Pinball Expo 2011</h4>
@@ -113,7 +113,7 @@
 		    <% end %>
 		    
 			<% link_to '/projects/chartpen.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/20_4.png' %>
+		      <%= auto_image_tag 'projects/20_4.png', 'Chartpen logo design project' %>
 		      <div class="project-text">
 		        <h5>Chartpen</h5>
 		        <h4>Logo Design</h4>
@@ -121,7 +121,7 @@
 		    <% end %>
 
 			<% link_to '/projects/doro.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/doro1.png' %>
+		      <%= auto_image_tag 'projects/doro1.png', 'Doro senior-friendly mobile phone interface design' %>
 		      <div class="project-text">
 		        <h5>Doro</h5>
 		        <h4>Mobile Phone Interfaces for Seniors</h4>
@@ -129,24 +129,23 @@
 		    <% end %>
 
 			<% link_to '/projects/barcamp.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/40.png' %>
+		      <%= auto_image_tag 'projects/40.png', 'Thoughtbot Barcamp website design project' %>
 		      <div class="project-text">
 		        <h5>thoughtbot</h5>
 		        <h4>Barcamp Website</h4>
 		      </div>
 		    <% end %>
 
-		<!--     <% link_to 'projects/fdn.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/38_2.png' %>
+			<% link_to '/projects/aerocrine.html', :class => 'project-item' do %>
+		      <%= auto_image_tag 'projects/aerocrine2.png', 'Aerocrine Niox Vero medical device project showcase' %>
 		      <div class="project-text">
-		        <h5>FDN</h5>
-		        <h4>Logo Design</h4>
+		        <h5>Aerocrine</h5>
+		        <h4>Niox Vero</h4>
 		      </div>
-		    <% end %> -->
-
+		    <% end %>
 
 			<% link_to '/projects/earthworks.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/20.png' %>
+		      <%= auto_image_tag 'projects/20.png', 'Earthworks logo design study project' %>
 		      <div class="project-text">
 		        <h5>Graphic Design Study</h5>
 		        <h4>Earthworks Logo Design</h4>
@@ -154,7 +153,7 @@
 		    <% end %>
 
 			<% link_to '/projects/diabetes-education.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/37.png' %>
+		      <%= auto_image_tag 'projects/37.png', 'Roche Diagnostics diabetes education tools design' %>
 		      <div class="project-text">
 		        <h5>Roche Diagnostics</h5>
 		        <h4>Diabetes Education Tools</h4>
@@ -162,88 +161,15 @@
 		    <% end %>
 
 			<% link_to '/projects/sustainable-smartphone.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/35.png' %>
+		      <%= auto_image_tag 'projects/35.png', 'Sustainable smartphone concept design project' %>
 		      <div class="project-text">
 		        <h5>Concept Project</h5>
 		        <h4>Sustainable Smart Phone</h4>
 		      </div>
 		    <% end %>
 
-		<!--     
-		    <% link_to 'projects/illustrations.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/31.png' %>
-		      <div class="project-text">
-		        <h5>Various Projects</h5>
-		        <h4>Illustrations</h4>
-		      </div>
-		    <% end %>
-
-				<% link_to '/projects/sjnitke.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/18_2.jpg' %>
-		      <div class="project-text">
-		        <h5>Graphic Design Study</h5>
-		        <h4>Albert Sjnitke Album Art</h4>
-		      </div>
-		    <% end %>
-		    
-			<% link_to '/projects/book.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/5.jpg' %>
-		      <div class="project-text">
-		        <h5>Graphic Design Study</h5>
-		        <h4>Book Cover</h4>
-		      </div>
-		    <% end %>
-		    
-			<% link_to '/projects/frutiger.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/11.jpg' %>
-		      <div class="project-text">
-		        <h5>Graphic Design Study</h5>
-		        <h4>Adrian Frutiger Exhibition</h4>
-		      </div>
-		    <% end %>
-		    
-			<% link_to '/projects/recipes.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/26_2.jpg' %>
-		      <div class="project-text">
-		        <h5>Graphic Design Study</h5>
-		        <h4>Flowchart Recipes</h4>
-		      </div>
-		    <% end %>
-		    
-			<% link_to '/projects/eastwood.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/32.png' %>
-		      <div class="project-text">
-		        <h5>Graphic Design Study</h5>
-		        <h4>Eastwood Coffee Packaging</h4>
-		      </div>
-		    <% end %>
-		    
-			<% link_to '/projects/poetry.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/17_5.png' %>
-		      <div class="project-text">
-		        <h5>Graphic Design Study</h5>
-		        <h4>The American Poetry Review</h4>
-		      </div>
-		    <% end %>
-		    
-			<% link_to '/projects/one-image.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/2.jpg' %>
-		      <div class="project-text">
-		        <h5>Graphic Design Study</h5>
-		        <h4>One Image One word</h4>
-		      </div>
-		    <% end %>
-			<% link_to '/projects/portland.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/33.png' %>
-		      <div class="project-text">
-		        <h5>Graphic Design Study</h5>
-		        <h4>Portland General Electrics Annual Report 2011</h4>
-		      </div>
-		    <% end %>
-		     -->
-
 			<% link_to '/projects/element.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/9.jpg' %>
+		      <%= auto_image_tag 'projects/9.jpg', 'The Element Radiator design project by Interactive Institute' %>
 		      <div class="project-text">
 		        <h5>The Interactive Institute</h5>
 		        <h4>The Element Radiator</h4>
@@ -251,7 +177,7 @@
 		    <% end %>
 		    
 			<% link_to '/projects/power-aware-cord.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/8.jpg' %>
+		      <%= auto_image_tag 'projects/8.jpg', 'The Power-Aware Cord project by Interactive Institute' %>
 		      <div class="project-text">
 		        <h5>The Interactive Institute</h5>
 		        <h4>The Power-Aware Cord</h4>
@@ -259,7 +185,7 @@
 		    <% end %>
 
 			<% link_to '/projects/microwave.html', :class => 'project-item' do %>
-		      <%= auto_image_tag 'projects/12.png' %>
+		      <%= auto_image_tag 'projects/12.png', 'Electrolux concept halogen microwave oven thesis project' %>
 		      <div class="project-text">
 		        <h5>Electrolux (Thesis Work)</h5>
 		        <h4>Concept Halogen Microwave Oven</h4>
