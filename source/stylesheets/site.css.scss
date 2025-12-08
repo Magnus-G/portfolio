@@ -14,14 +14,18 @@ $breakpoint: 680px;
 $hero-first-breakpoint: 900px;
 $resume-breakpoint: 500px;
 
-$hero-background: #141919;
+$dark-background: #091515;
+$light-color: #d0d5d5;
+
+$hero-background: $dark-background;
 $body-color: $hero-background;
-$what-i-do-background: #d7fffe;
-$clients-background: $hero-background;
+$what-i-do-background: $dark-background;
+$clients-background: $dark-background;
 $highlight-background: #ffde66;
-$portfolio-background: white;
+$portfolio-background: $dark-background;
+
 $project-background: white;
-$resume-background: #ffdddc;
+$resume-background: $dark-background;
 $contact-background: $hero-background;
 
 $what-i-do-max-width: 900px;
@@ -34,7 +38,7 @@ $light-font-color: $what-i-do-background;
 $dark-font-color: $dark;
 $max-width: 666px;
 
-$container-padding-small: 5rem;
+$container-padding-small: 4rem;
 $container-padding-big: 10rem;
 
 $container-padding-mobile: 9rem 1rem 2rem;
@@ -45,15 +49,16 @@ $font-viga: 'Viga', sans-serif;
 $font-header: 'norwester', helvetica, sans-serif;
 $font-small-header: 'Oswald', helvetica, sans-serif;
 $font-serif: 'Merriweather', serif;
+$font-rubik: 'Rubik', sans-serif;
 
 @mixin top($foreground, $background) {
   height: 0;
   border-style: solid;
   border-width: 100px 0 0;
-  border-color: $background transparent transparent $foreground;  
+  border-color: $background transparent transparent $foreground;
 }
 
- @mixin bottom ($foreground, $background) {
+@mixin bottom ($foreground, $background) {
   height: 0;
   border-style: solid;
   border-width: 100px 0 0 100vw;
@@ -86,7 +91,8 @@ svg {
 @import "contact";
 @import "case";
 
-body, html {
+body,
+html {
   -webkit-font-smoothing: antialiased;
   color: $light-font-color;
   background-color: $body-color;
@@ -138,32 +144,32 @@ h2 {
 }
 
 h3 {
-	color: $dark-font-color;
-	text-transform: uppercase;
-	border-bottom: 2px solid;
-	font-family: $font-small-header;
-	display: inline-block;
-	font-weight: 400;
-	font-size: 1rem;
-	margin-top: 2rem;
+  color: $dark-font-color;
+  text-transform: uppercase;
+  border-bottom: 2px solid;
+  font-family: $font-small-header;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 2rem;
 
-	@media (max-width: $breakpoint) {
-		margin-top: .7rem;
-	}
+  @media (max-width: $breakpoint) {
+    margin-top: .7rem;
+  }
 }
 
 h5 {
-  color: $dark-font-color;
   font-size: .7rem;
   margin: 0;
-  color: transparentize($dark-font-color, 0.5);
+  color: transparentize($dark-font-color, 0.3);
   font-weight: 400;
   margin-bottom: 0.1rem;
 }
 
-p, ul {
+p,
+ul {
   font-family: $font-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.7;
   margin-top: 0;
   margin-bottom: 2rem;

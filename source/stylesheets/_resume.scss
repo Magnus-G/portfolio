@@ -2,8 +2,12 @@
   width: 100%;
   display: inline-block;
   background: $resume-background;
-  padding-top: $container-padding-big;
+  padding-top: $container-padding-small;
   position: relative;
+
+  @media (max-width: $breakpoint) {
+    padding: 0;
+  }
 
   .triangle {
     fill: $portfolio-background;
@@ -11,13 +15,20 @@
 }
 
 .resume {
-  color: $dark-font-color;
+  color: $light-color;
   text-align: left;
   max-width: $max-width;
   margin: auto;
 
+  .resume-header h1,
+  h2 {
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
   @media (max-width: $breakpoint) {
-    padding: 1em;
+    padding: 0 2em;
   }
 
   a {
@@ -27,6 +38,7 @@
   h6 {
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
+    opacity: .8;
     text-align: left;
     margin: 1rem 0;
     font-weight: 800;
@@ -40,20 +52,22 @@
   h4 {
     display: inline;
     font-size: 1.2em;
-    font-family: $font-serif;
-    font-style: italic;
+    font-family: $font-rubik;
   }
 
   h5 {
-    color: desaturate(darken($resume-background, 20%), 30%);
+    color: white;
+    opacity: .8;
     text-transform: uppercase;
     margin-bottom: 0.5em;
-    margin-top: .5em;
+    margin-top: .7em;
     font-weight: 800;
   }
 
   p {
     line-height: 1.6;
+    opacity: .8;
+    font-family: $font-rubik;
     margin: 0 auto 3em;
   }
 
@@ -76,7 +90,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $dark-font-color;
+  background: lighten($resume-background, 10%);
   color: black;
   height: 4em;
   width: 4em;

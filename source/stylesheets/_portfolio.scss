@@ -4,14 +4,13 @@ $adlibris-color: #b23434;
 $tvnu-color: #194b6d;
 $nyarp-color: #BE8B41;
 
-
 .portfolio-with-text-container {
   background: $portfolio-background;
   padding-top: $container-padding-big;
   position: relative;
 
-  h1,
-  h2 {
+  h2,
+  p {
     color: $dark-font-color;
   }
 
@@ -29,16 +28,28 @@ $nyarp-color: #BE8B41;
 
 .portfolio-flex-centering {
   margin: auto;
-  padding: 2rem;
+  padding: 4rem 2rem;
 }
 
-.projects-in-focus,
+
+.projects-in-focus {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 1300px;
+  margin-bottom: 4rem;
+
+  @media (max-width: $breakpoint) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .projects-at-a-glance {
-  gap: 4px;
+  gap: 1rem;
   display: flex;
   flex-wrap: wrap;
   max-width: 1300px;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 
 .project-item-focus {
@@ -160,12 +171,13 @@ $nyarp-color: #BE8B41;
   }
 
   h4 {
-    color: $dark-font-color;
+    color: $light-color;
     font-size: .7rem;
     margin: 0;
   }
 
   h5 {
+    color: $light-color;
     margin-bottom: 0.2rem;
   }
 }

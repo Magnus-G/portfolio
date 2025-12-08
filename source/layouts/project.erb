@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
@@ -22,8 +22,6 @@
         <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
         <nav role="navigation">
           <ul id="js-navigation-menu" class="navigation-menu show scroll-on-page-links">
-            <li class="nav-link"><a class="scroll-on-page-link what-link" href="/index.html#scroll-link-1">What I Do</a></li>
-            <li class="nav-link"><a class="scroll-on-page-link clients-link" href="/index.html#scroll-link-2">Clients</a></li>
             <li class="nav-link"><a class="scroll-on-page-link portfolio-link" href="/index.html#scroll-link-3">Portfolio</a></li>
             <li class="nav-link"><a class="scroll-on-page-link resume-link" href="/index.html#scroll-link-4">Resume/CV</a></li>
             <li class="nav-link"><a class="scroll-on-page-link contact-link" href="/index.html#scroll-link-5">Contact</a></li>
@@ -33,9 +31,7 @@
     </header>
     
     <div class="project">
-        <% link_to "/index.html#scroll-link-3", :class => 'back-arrow'  do %>
-          <img src="../images/arrow.svg"/>
-        <% end %>
+        
         <div class="project-container">
             <%= yield %>
             <div class="project-end"></div>
