@@ -5,24 +5,26 @@
 		<div class="projects-in-focus-heading">
   
 			<div class="projects-in-focus">
-			<% link_to '/projects/mindler.html', :class => 'project-item-focus mindler' do %>
+			
+<% link_to '/projects/mindler.html', :class => 'project-item-focus mindler' do %>
 		  		<div class="project-item-focus-back">
 				  	<%= auto_image_tag 'logos/mindler.png', 'Mindler company logo' %>
 				  	<h3>UX DESIGN LEAD</h3>
-				  </div>
-				<% end %>
+				  	<div class="read-more-overlay">Read more</div>
+			  	</div>
+				<% end %>			
 
-			<% link_to '/projects/tvnu.html', :class => 'project-item-focus tvnu' do %>
+<% link_to '/projects/tvnu.html', :class => 'project-item-focus tvnu' do %>
 		  		<div class="project-item-focus-back">
 				  	<%= auto_image_tag 'logos/tvnu.png', 'TV.nu company logo' %>
 				  	<h3>PRODUCT DESIGN</h3>
-				  </div>
-				<% end %>
-
-			<% link_to '/projects/nyarp.html', :class => 'project-item-focus nyarp' do %>
+				  	<div class="read-more-overlay">Read more</div>
+			  	</div>
+				<% end %>			<% link_to '/projects/nyarp.html', :class => 'project-item-focus nyarp' do %>
 		    	<div class="project-item-focus-back">
 		      	<%= auto_image_tag 'logos/nyarp.png', 'Nyarp company logo' %>
 		      	<h3>FULL STACK DESIGN</h3>
+		      	<div class="read-more-overlay">Read more</div>
 		      </div>
 		    <% end %>
 
@@ -30,7 +32,9 @@
           <div class="project-item-focus-back">
             <%= auto_image_tag 'logos/adlibris.png', 'Adlibris company logo' %>
             <h3>UX / UI / FRONTEND DESIGN</h3>
+            <div class="read-more-overlay">Read more</div>
           </div>
+
         <% end %>
 
 			</div>

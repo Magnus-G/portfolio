@@ -61,6 +61,12 @@ $nyarp-color: #60502d;
   flex-grow: 1;
   transition: background-color .3s ease-out 100ms;
 
+  &:hover {
+    .read-more-overlay {
+      opacity: 1;
+    }
+  }
+
   @media (max-width: $breakpoint) {
     height: 20rem;
   }
@@ -98,10 +104,32 @@ $nyarp-color: #60502d;
       margin: 1.5rem;
     }
   }
+
+  .read-more-overlay {
+    position: absolute;
+    padding: 0.6rem 1rem;
+    border-radius: 50px;
+    font-family: $font-small-header;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .3s ease-out 100ms;
+    color: white;
+    font-size: .7rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    text-transform: uppercase;
+  }
 }
 
 .adlibris {
   background: $adlibris-color;
+
+  .read-more-overlay {
+    background-color: darken($adlibris-color, 8%);
+  }
 
   &:hover {
     background-color: darken($adlibris-color, 4%);
@@ -111,6 +139,10 @@ $nyarp-color: #60502d;
 .mindler {
   background: $mindler-color;
 
+  .read-more-overlay {
+    background-color: darken($mindler-color, 8%);
+  }
+
   &:hover {
     background-color: darken($mindler-color, 4%);
   }
@@ -119,6 +151,10 @@ $nyarp-color: #60502d;
 .tvnu {
   background: $tvnu-color;
 
+  .read-more-overlay {
+    background-color: darken($tvnu-color, 8%);
+  }
+
   &:hover {
     background-color: darken($tvnu-color, 4%);
   }
@@ -126,6 +162,10 @@ $nyarp-color: #60502d;
 
 .nyarp {
   background: $nyarp-color;
+
+  .read-more-overlay {
+    background-color: darken($nyarp-color, 8%);
+  }
 
   &:hover {
     background-color: darken($nyarp-color, 4%);
