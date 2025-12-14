@@ -680,6 +680,8 @@ textarea {
   justify-content: center;
   flex-grow: 1;
   transition: background-color .3s ease-out 100ms; }
+  .project-item-focus:hover .read-more-overlay {
+    opacity: 1; }
   @media (max-width: 680px) {
     .project-item-focus {
       height: 20rem; } }
@@ -708,23 +710,48 @@ textarea {
     @media (max-width: 680px) {
       .project-item-focus-back h3 {
         margin: 1.5rem; } }
+  .project-item-focus-back .read-more-overlay {
+    position: absolute;
+    padding: 0.6rem 1rem;
+    border-radius: 50px;
+    font-family: "Oswald", helvetica, sans-serif;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .3s ease-out 100ms;
+    color: white;
+    font-size: .7rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    text-transform: uppercase; }
+
 .adlibris {
   background: #a23939; }
+  .adlibris .read-more-overlay {
+    background-color: #842e2e; }
   .adlibris:hover {
     background-color: #933434; }
 
 .mindler {
   background: #19605D; }
+  .mindler .read-more-overlay {
+    background-color: #11403e; }
   .mindler:hover {
     background-color: #15504d; }
 
 .tvnu {
   background: #194b6d; }
+  .tvnu .read-more-overlay {
+    background-color: #11344c; }
   .tvnu:hover {
     background-color: #15405c; }
 
 .nyarp {
   background: #60502d; }
+  .nyarp .read-more-overlay {
+    background-color: #443920; }
   .nyarp:hover {
     background-color: #524426; }
 
