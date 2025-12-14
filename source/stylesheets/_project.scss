@@ -1,150 +1,191 @@
+$content-main-width: 666px;
+$content-wide-width: 800px;
+$content-extra-wide-width: 1200px;
+
 .back-arrow {
-	position: fixed;
-	top: 5rem;
-	left: 2rem;
-	z-index: 2;
+  position: fixed;
+  top: 5rem;
+  left: 2rem;
+  z-index: 2;
 
-	@media (max-width: $breakpoint) {
-		display: none;
-	}
+  @media (max-width: $breakpoint) {
+    display: none;
+  }
 
-	img {
-		height: 2.5rem;
-		width: 2.5rem;
-		display: block;
-	}
+  img {
+    height: 2.5rem;
+    width: 2.5rem;
+    display: block;
+  }
 }
 
 .project {
-	background: $project-background;
-	width: 100vw;
-	padding-bottom: 8rem;
+  background: $project-background;
+  width: 100vw;
+  padding-bottom: 8rem;
 
-	@media (max-width: $breakpoint) {
-		padding-bottom: 5rem;
-	}
+  @media (max-width: $breakpoint) {
+    padding-bottom: 5rem;
+  }
 }
 
 .project-container {
-	max-width: 666px;
-	padding-top: 5rem;
-	margin: 0 auto;
+  padding-top: 5rem;
+  margin: 0 auto;
 
-	@media (max-width: $breakpoint) {
-		padding: 5rem 1rem 0;
-	}
+  @media (max-width: $breakpoint) {
+    padding: 5rem 1rem 0;
+  }
 
-	img {
-		margin-top: 2rem;
-		margin-bottom: 1rem;
-		border-radius: 3px;
+  h1 {
+    max-width: $content-main-width;
+    text-align: left;
+    color: $dark-font-color;
+    margin: auto;
+    margin-bottom: 3rem;
 
-		@media (max-width: $breakpoint) {
-			margin-top: 1rem;
-			margin-bottom: 1rem;
-		}
-	}
+    @media (max-width: $breakpoint) {
+      margin-bottom: 1rem;
+    }
+  }
 
-	h1 {
-		text-align: left;
-		color: $dark-font-color;
-		margin-bottom: 3rem;
+  h2 {
+    max-width: $content-main-width;
+    text-align: left;
+    color: $dark-font-color;
+    margin: 3rem auto 1rem auto;
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding: 0;
 
-		@media (max-width: $breakpoint) {
-			margin-bottom: 1rem;
-		}
-	}
+    @media (max-width: $breakpoint) {
+      font-size: 1.2rem;
+      margin: 1.5rem 0 1rem 0;
+    }
+  }
 
-	h2 {
-		text-align: left;
-		color: $dark-font-color;
-		margin: 3rem 0 1rem 0;
-		font-weight: 800;
-		font-size: 1.2rem;
-		padding: 0;
+  h3 {
+    max-width: $content-main-width;
+    text-align: left;
+    color: $dark-font-color;
+    margin: 2rem auto 1rem auto;
+    display: block;
+  }
 
-		@media (max-width: $breakpoint) {
-			font-size: 1.2rem;
-			margin: 1.5rem 0 1rem 0;
-		}
-	}
+  p:not(:has(img)),
+  a {
+    max-width: $content-main-width;
+    color: $dark-font-color;
+    font-size: 1.1rem;
+    margin: auto;
+    margin-bottom: 1rem;
 
-	p,
-	a {
-		color: $dark-font-color;
-		font-size: 1.1rem;
-		margin-bottom: 1rem;
+    @media (max-width: $breakpoint) {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
 
-		@media (max-width: $breakpoint) {
-			font-size: 1rem;
-			margin-bottom: 1rem;
-		}
-	}
+  img {
+    max-width: $content-main-width;
+    margin: 2rem auto 1rem auto;
+    border-radius: 3px;
+    display: block;
 
-	ul {
-		border: 1px solid silver;
-		padding: 1.2rem 1rem 1.5rem;
-		border-radius: 6px;
-		color: $dark-font-color;
-		font-size: 1.1rem;
-		margin-top: 2rem;
-		margin-bottom: 3rem;
-		padding-inline-start: 2.2rem;
-		box-shadow: 0 7px 52px #0000001a;
+    @media (max-width: $breakpoint) {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
 
-		li {
-			margin-bottom: 9px;
-		}
+  img.wide-image {
+    max-width: $content-wide-width;
+    padding: 0 1rem;
 
-		em {
-			font-weight: bold;
-			font-style: none !important;
-		}
+    @media (max-width: $breakpoint) {
+      padding: 0;
+    }
+  }
+
+  img.extra-wide-image {
+    max-width: $content-extra-wide-width;
+    padding: 0 1rem;
+
+    &.shadow {
+      box-shadow: 0 7px 52px #0000001a;
+    }
+
+    @media (max-width: $breakpoint) {
+      padding: 0;
+    }
+  }
 
 
-		@media (max-width: $breakpoint) {
-			font-size: 0.9rem;
-			margin-bottom: 2rem;
-		}
-	}
+  ul {
+    max-width: $content-main-width;
+    border: 1px solid silver;
+    padding: 1.2rem 1rem 1.5rem;
+    border-radius: 6px;
+    color: $dark-font-color;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding-inline-start: 2.2rem;
+    box-shadow: 0 7px 52px #0000001a;
 
-	strong {
-		// caption
-		color: #aeb2ba;
-		display: block;
-		text-align: center;
-		font-style: italic;
-		font-size: 0.8rem;
-		max-width: 26rem;
-		margin: auto;
-		margin-top: -0.1rem;
-		margin-bottom: 2rem;
-	}
+    li {
+      margin-bottom: 9px;
+    }
 
-	code {
-		display: none;
-	}
+    em {
+      font-weight: bold;
+      font-style: none !important;
+    }
 
-	.project-end {
-		height: 3px;
-		width: 46px;
-		background-color: transparent;
-	}
+
+    @media (max-width: $breakpoint) {
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  strong {
+    // caption
+    color: #aeb2ba;
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.8rem;
+    max-width: 26rem;
+    margin: auto;
+    margin-top: -0.1rem;
+    margin-bottom: 2rem;
+  }
+
+  code {
+    display: none;
+  }
+
+  .project-end {
+    height: 3px;
+    width: 46px;
+    background-color: transparent;
+  }
 }
 
 .project-bottom-section {
-	padding-top: 6rem;
-	position: relative;
-	background-color: $portfolio-background;
-	color: $light-color;
-	width: 100vW;
+  padding-top: 6rem;
+  position: relative;
+  background-color: $portfolio-background;
+  color: $light-color;
+  width: 100vW;
 }
 
 .project-triangle {
-	height: 100px;
-	margin-top: -100px;
+  height: 100px;
+  margin-top: -100px;
 
-	@media (max-width: $breakpoint) {
-		height: 50px;
-	}
+  @media (max-width: $breakpoint) {
+    height: 50px;
+  }
 }
