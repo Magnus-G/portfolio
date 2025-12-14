@@ -785,31 +785,25 @@ textarea {
     .project {
       padding-bottom: 5rem; } }
 .project-container {
-  max-width: 666px;
   padding-top: 5rem;
   margin: 0 auto; }
   @media (max-width: 680px) {
     .project-container {
       padding: 5rem 1rem 0; } }
-  .project-container img {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-radius: 3px; }
-    @media (max-width: 680px) {
-      .project-container img {
-        margin-top: 1rem;
-        margin-bottom: 1rem; } }
   .project-container h1 {
+    max-width: 666px;
     text-align: left;
     color: #131515;
+    margin: auto;
     margin-bottom: 3rem; }
     @media (max-width: 680px) {
       .project-container h1 {
         margin-bottom: 1rem; } }
   .project-container h2 {
+    max-width: 666px;
     text-align: left;
     color: #131515;
-    margin: 3rem 0 1rem 0;
+    margin: 3rem auto 1rem auto;
     font-weight: 800;
     font-size: 1.2rem;
     padding: 0; }
@@ -817,17 +811,49 @@ textarea {
       .project-container h2 {
         font-size: 1.2rem;
         margin: 1.5rem 0 1rem 0; } }
-  .project-container p,
+  .project-container h3 {
+    max-width: 666px;
+    text-align: left;
+    color: #131515;
+    margin: 2rem auto 2rem auto;
+    display: block; }
+  .project-container p:not(:has(img)),
   .project-container a {
+    max-width: 666px;
     color: #131515;
     font-size: 1.1rem;
+    margin: auto;
     margin-bottom: 1rem; }
     @media (max-width: 680px) {
-      .project-container p,
+      .project-container p:not(:has(img)),
       .project-container a {
         font-size: 1rem;
         margin-bottom: 1rem; } }
+  .project-container img {
+    max-width: 666px;
+    margin: 2rem auto 1rem auto;
+    border-radius: 3px;
+    display: block; }
+    @media (max-width: 680px) {
+      .project-container img {
+        margin-top: 1rem;
+        margin-bottom: 1rem; } }
+  .project-container img.wide-image {
+    max-width: 800px;
+    padding: 0 1rem; }
+    @media (max-width: 680px) {
+      .project-container img.wide-image {
+        padding: 0; } }
+  .project-container img.extra-wide-image {
+    max-width: 1200px;
+    padding: 0 1rem; }
+    .project-container img.extra-wide-image.shadow {
+      box-shadow: 0 7px 52px #0000001a; }
+    @media (max-width: 680px) {
+      .project-container img.extra-wide-image {
+        padding: 0; } }
   .project-container ul {
+    max-width: 666px;
     border: 1px solid silver;
     padding: 1.2rem 1rem 1.5rem;
     border-radius: 6px;
