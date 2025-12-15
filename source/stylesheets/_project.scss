@@ -1,4 +1,5 @@
 $content-main-width: 666px;
+$content-hero-width: 100%;
 $content-wide-width: 800px;
 $content-extra-wide-width: 1200px;
 
@@ -30,11 +31,22 @@ $content-extra-wide-width: 1200px;
 }
 
 .project-container {
-  padding-top: 5rem;
+  padding-top: 3rem;
   margin: 0 auto;
 
-  @media (max-width: $breakpoint) {
-    padding: 5rem 1rem 0;
+  .hero {
+    max-width: $content-hero-width;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+
+    @media (max-width: $breakpoint) {
+      padding: 0;
+      height: 100%;
+    }
   }
 
   h1 {
@@ -46,8 +58,11 @@ $content-extra-wide-width: 1200px;
 
     @media (max-width: $breakpoint) {
       margin-bottom: 1rem;
+      padding: 0 1rem;
+      margin: 0 0 2rem 0
     }
   }
+
 
   h2 {
     max-width: $content-main-width;
@@ -61,6 +76,8 @@ $content-extra-wide-width: 1200px;
     @media (max-width: $breakpoint) {
       font-size: 1.2rem;
       margin: 1.5rem 0 1rem 0;
+      padding: 0 1rem;
+
     }
   }
 
@@ -70,6 +87,11 @@ $content-extra-wide-width: 1200px;
     color: $dark-font-color;
     margin: 2rem auto 2rem auto;
     display: block;
+
+    @media (max-width: $breakpoint) {
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
   }
 
   p:not(:has(img)),
@@ -82,7 +104,8 @@ $content-extra-wide-width: 1200px;
 
     @media (max-width: $breakpoint) {
       font-size: 1rem;
-      margin-bottom: 1rem;
+      margin: 0 0 2rem 0;
+      padding: 0 1rem;
     }
   }
 
@@ -95,6 +118,7 @@ $content-extra-wide-width: 1200px;
     @media (max-width: $breakpoint) {
       margin-top: 1rem;
       margin-bottom: 1rem;
+      padding: 0 1rem;
     }
   }
 
@@ -103,7 +127,7 @@ $content-extra-wide-width: 1200px;
     padding: 0 1rem;
 
     @media (max-width: $breakpoint) {
-      padding: 0;
+      padding: 0 1rem;
     }
   }
 
@@ -126,12 +150,17 @@ $content-extra-wide-width: 1200px;
     border: 1px solid silver;
     padding: 1.2rem 1rem 1.5rem;
     border-radius: 6px;
+    margin: auto;
     color: $dark-font-color;
     font-size: 1.1rem;
     margin-top: 2rem;
     margin-bottom: 3rem;
     padding-inline-start: 2.2rem;
     box-shadow: 0 7px 52px #0000001a;
+
+    @media (max-width: $breakpoint) {
+      margin: 0 1rem;
+    }
 
     li {
       margin-bottom: 9px;
