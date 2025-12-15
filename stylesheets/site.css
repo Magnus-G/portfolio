@@ -812,11 +812,20 @@ textarea {
     .project {
       padding-bottom: 5rem; } }
 .project-container {
-  padding-top: 5rem;
+  padding-top: 3rem;
   margin: 0 auto; }
-  @media (max-width: 680px) {
-    .project-container {
-      padding: 5rem 1rem 0; } }
+  .project-container .hero {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    height: 400px;
+    object-fit: cover;
+    width: 100%; }
+    @media (max-width: 680px) {
+      .project-container .hero {
+        padding: 0;
+        height: 100%; } }
   .project-container h1 {
     max-width: 666px;
     text-align: left;
@@ -825,7 +834,9 @@ textarea {
     margin-bottom: 3rem; }
     @media (max-width: 680px) {
       .project-container h1 {
-        margin-bottom: 1rem; } }
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+        margin: 0 0 2rem 0; } }
   .project-container h2 {
     max-width: 666px;
     text-align: left;
@@ -837,13 +848,18 @@ textarea {
     @media (max-width: 680px) {
       .project-container h2 {
         font-size: 1.2rem;
-        margin: 1.5rem 0 1rem 0; } }
+        margin: 1.5rem 0 1rem 0;
+        padding: 0 1rem; } }
   .project-container h3 {
     max-width: 666px;
     text-align: left;
     color: #131515;
     margin: 2rem auto 2rem auto;
     display: block; }
+    @media (max-width: 680px) {
+      .project-container h3 {
+        margin-bottom: 2rem;
+        padding: 0 1rem; } }
   .project-container p:not(:has(img)),
   .project-container a {
     max-width: 666px;
@@ -855,7 +871,8 @@ textarea {
       .project-container p:not(:has(img)),
       .project-container a {
         font-size: 1rem;
-        margin-bottom: 1rem; } }
+        margin: 0 0 2rem 0;
+        padding: 0 1rem; } }
   .project-container img {
     max-width: 666px;
     margin: 2rem auto 1rem auto;
@@ -864,13 +881,14 @@ textarea {
     @media (max-width: 680px) {
       .project-container img {
         margin-top: 1rem;
-        margin-bottom: 1rem; } }
+        margin-bottom: 1rem;
+        padding: 0 1rem; } }
   .project-container img.wide-image {
     max-width: 800px;
     padding: 0 1rem; }
     @media (max-width: 680px) {
       .project-container img.wide-image {
-        padding: 0; } }
+        padding: 0 1rem; } }
   .project-container img.extra-wide-image {
     max-width: 1200px;
     padding: 0 1rem; }
@@ -884,12 +902,16 @@ textarea {
     border: 1px solid silver;
     padding: 1.2rem 1rem 1.5rem;
     border-radius: 6px;
+    margin: auto;
     color: #131515;
     font-size: 1.1rem;
     margin-top: 2rem;
     margin-bottom: 3rem;
     padding-inline-start: 2.2rem;
     box-shadow: 0 7px 52px #0000001a; }
+    @media (max-width: 680px) {
+      .project-container ul {
+        margin: 0 1rem; } }
     .project-container ul li {
       margin-bottom: 9px; }
     .project-container ul em {
