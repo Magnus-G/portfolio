@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    
+    <title>Magnus Gyllenswärd</title>
+
+    <link href="../stylesheets/site.css" rel="stylesheet" />
+    <script src="../javascripts/all.js"></script>
+  </head>
+
+  <body class="projects projects_xln">
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <h1><a href="/index.html">Magnus Gyllenswärd Design</a></h1>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show scroll-on-page-links">
+        <li class="nav-link"><a class="scroll-on-page-link portfolio-link" href="#scroll-link-3">Portfolio</a></li>
+        <li class="nav-link"><a class="scroll-on-page-link resume-link" href="#scroll-link-4">Resume/CV</a></li>
+        <li class="nav-link"><a class="scroll-on-page-link contact-link" href="#scroll-link-5">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div style="background-color: black; display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <div style="background-color: black; display: flex; justify-content: center; align-items: center; position: relative;">
+    <img src="../images/projects/xln/back-empty.png" alt="Back" style="width: 921px; height: 623px;">
+
+    <div id="image-cluster" style="position: absolute; top: 161px; left: 17px; display: flex; gap: 8px">
+      <!-- Draggable images -->
+      <img src="../images/projects/xln/1.png" alt="Image 1" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/2.png" alt="Image 2" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/3.png" alt="Image 3" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/4.png" alt="Image 4" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/5.png" alt="Image 5" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/6.png" alt="Image 6" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/7.png" alt="Image 7" class="draggable" style="width: 120px; position: relative;">
+    </div>
+
+<input id="dynamic-slider" type="range" min="0" max="100" value="50" 
+          style="-webkit-appearance: none; 
+width: 90px; 
+left: 488px; 
+height: 10px; 
+background: #1C1C26; border: 2px solid #444959; 
+border-radius: 10px; 
+position: absolute; 
+top: 38px; 
+z-index: 99;">
+
+
+
+  </div>
+</div>
+
+<style>
+
+
+
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+  }
+  input[type=range]:active::-webkit-slider-thumb {
+    background: transparent;
+  }
+
+
+
+
+
+  .draggable {
+    transition: transform 0.2s, margin 0.2s;
+    cursor: grab;
+  }
+  .draggable:active {
+    transform: scale(1.2);
+    cursor: grabbing;
+  }
+  .placeholder {
+    width: 120px;
+    height: 120px;
+    margin: 0 8px;
+    background: transparent;
+    border: 2px dashed #ACBBD2;
+  }
+</style>
+
+<script>
+  const slider = document.getElementById('dynamic-slider');
+  slider.addEventListener('input', (event) => {
+    const value = event.target.value;
+    const thumbWidth = 20 + (value / 5); // Increase thumb width based on value
+    event.target.style.setProperty('--thumb-width', `${thumbWidth}px`);
+    event.target.style.background = `linear-gradient(to right, #ACBBD2 ${value}%, #1C1C26 ${value}%)`;
+  });
+
+
+  const cluster = document.getElementById('image-cluster');
+  let draggedElement = null;
+  let placeholder = null;
+
+  cluster.addEventListener('dragstart', (e) => {
+    if (e.target.classList.contains('draggable')) {
+      draggedElement = e.target;
+      placeholder = document.createElement('div');
+      placeholder.classList.add('placeholder');
+      draggedElement.style.opacity = '0.5';
+      e.dataTransfer.effectAllowed = 'move';
+    }
+  });
+
+  cluster.addEventListener('dragend', (e) => {
+    if (draggedElement) {
+      draggedElement.style.opacity = '1';
+      placeholder.remove();
+      draggedElement = null;
+      placeholder = null;
+    }
+  });
+
+  cluster.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    if (placeholder && e.target.classList.contains('draggable') && e.target !== draggedElement) {
+      const rect = e.target.getBoundingClientRect();
+      const next = e.clientX > rect.left + rect.width / 2;
+      cluster.insertBefore(placeholder, next ? e.target.nextSibling : e.target);
+    }
+  });
+
+  cluster.addEventListener('drop', (e) => {
+    e.preventDefault();
+    if (draggedElement && placeholder) {
+      cluster.insertBefore(draggedElement, placeholder);
+    }
+  });
+</script>
+  </body>
+</html>
