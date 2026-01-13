@@ -34,73 +34,76 @@
   <div style="background-color: black; display: flex; justify-content: center; align-items: center; position: relative;">
     <img src="../images/projects/xln/back-empty.png" alt="Back" style="width: 921px; height: 623px;">
 
-    <div id="image-cluster" style="position: absolute; top: 161px; left: 17px; display: flex; gap: 8px">
-      <!-- Draggable images -->
-      <img src="../images/projects/xln/1.png" alt="Image 1" class="draggable" style="width: 120px; position: relative;">
-      <img src="../images/projects/xln/2.png" alt="Image 2" class="draggable" style="width: 120px; position: relative;">
-      <img src="../images/projects/xln/3.png" alt="Image 3" class="draggable" style="width: 120px; position: relative;">
-      <img src="../images/projects/xln/4.png" alt="Image 4" class="draggable" style="width: 120px; position: relative;">
-      <img src="../images/projects/xln/5.png" alt="Image 5" class="draggable" style="width: 120px; position: relative;">
-      <img src="../images/projects/xln/6.png" alt="Image 6" class="draggable" style="width: 120px; position: relative;">
-      <img src="../images/projects/xln/7.png" alt="Image 7" class="draggable" style="width: 120px; position: relative;">
+    <input id="dynamic-slider" type="range" min="0" max="100" value="50" style="
+      -webkit-appearance: none; 
+      width: 90px; 
+      left: 488px; 
+      height: 10px; 
+      background: #1C1C26; border: 2px solid #444959; 
+      border-radius: 10px; 
+      position: absolute; 
+      top: 38px; 
+      z-index: 99;"
+    >
+
+    <div id="image-cluster" style="position: absolute; top: 78px; left: 17px; display: flex; gap: 8px">
+      <img src="../images/projects/xln/full_modules/1.png" alt="Image 1" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/full_modules/2.png" alt="Image 2" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/full_modules/3.png" alt="Image 3" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/full_modules/4.png" alt="Image 4" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/full_modules/5.png" alt="Image 5" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/full_modules/6.png" alt="Image 6" class="draggable" style="width: 120px; position: relative;">
+      <img src="../images/projects/xln/full_modules/7.png" alt="Image 7" class="draggable" style="width: 120px; position: relative;">
     </div>
 
-<input id="dynamic-slider" type="range" min="0" max="100" value="50" 
-          style="-webkit-appearance: none; 
-width: 90px; 
-left: 488px; 
-height: 10px; 
-background: #1C1C26; border: 2px solid #444959; 
-border-radius: 10px; 
-position: absolute; 
-top: 38px; 
-z-index: 99;">
+    <div id="macro-hover" style="position: absolute; top: 0px; left: 380px; width: 200px; height: 60px; z-index: 10;"></div>
+    <div id="harmonic-hover" style="position: absolute; top: 550px; left: 540px; width: 200px; height: 60px; z-index: 10;"></div>
 
+    <div id="macro-text" style="width: 921px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); color: silver; display: none; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; z-index: 1000;">
+      <div style="display: flex; justify-content: center;">The Preset Macro will adjust the levels of the modules in a pre-specified way.</div>
+    </div>
 
+    <div id="harmonic-text" style="width: 921px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); color: silver; display: none; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; z-index: 1000;">
+      <div style="display: flex; justify-content: center;">Harmonic Emphasis will detect the chords or notes being played and enhance them.</div>
+    </div>
 
   </div>
 </div>
 
 <style>
 
-
-
-
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 20px;
     height: 20px;
     background: transparent;
-    border-radius: 10px 0 0 10px;
     cursor: pointer;
   }
   input[type=range]:active::-webkit-slider-thumb {
     background: transparent;
   }
 
-
-
-
-
   .draggable {
     transition: transform 0.2s, margin 0.2s;
     cursor: grab;
   }
   .draggable:active {
-    transform: scale(1.2);
     cursor: grabbing;
   }
   .placeholder {
-    width: 120px;
+    width: 0px;
     height: 120px;
-    margin: 0 8px;
+    margin: 0;
     background: transparent;
-    border: 2px dashed #ACBBD2;
   }
 </style>
 
 <script>
+
+  // Preset Macro
+
   const slider = document.getElementById('dynamic-slider');
   slider.addEventListener('input', (event) => {
     const value = event.target.value;
@@ -109,6 +112,7 @@ z-index: 99;">
     event.target.style.background = `linear-gradient(to right, #ACBBD2 ${value}%, #1C1C26 ${value}%)`;
   });
 
+  // Signal Chain
 
   const cluster = document.getElementById('image-cluster');
   let draggedElement = null;
@@ -119,7 +123,7 @@ z-index: 99;">
       draggedElement = e.target;
       placeholder = document.createElement('div');
       placeholder.classList.add('placeholder');
-      draggedElement.style.opacity = '0.5';
+      draggedElement.style.opacity = '0.2';
       e.dataTransfer.effectAllowed = 'move';
     }
   });
@@ -147,6 +151,33 @@ z-index: 99;">
     if (draggedElement && placeholder) {
       cluster.insertBefore(draggedElement, placeholder);
     }
+  });
+
+
+
+  // Hover Area Functionality
+  const macroHover = document.getElementById('macro-hover');
+  const macroText = document.getElementById('macro-text');
+
+  macroHover.addEventListener('mouseenter', () => {
+    macroText.style.display = 'block';
+  });
+
+  macroHover.addEventListener('mouseleave', () => {
+    macroText.style.display = 'none';
+  });
+
+
+
+  const harmonicHover = document.getElementById('harmonic-hover');
+  const harmonicText = document.getElementById('harmonic-text');
+
+  harmonicHover.addEventListener('mouseenter', () => {
+    harmonicText.style.display = 'block';
+  });
+
+  harmonicHover.addEventListener('mouseleave', () => {
+    harmonicText.style.display = 'none';
   });
 </script>
   </body>
